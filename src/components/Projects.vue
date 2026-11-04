@@ -30,15 +30,17 @@
         </p>
       </div>
 
-      <!-- Demo placeholder -->
-      <div class="aspect-video w-full rounded-md bg-stone-100 border border-stone-200 overflow-hidden flex items-center justify-center text-stone-400 text-xs sm:text-sm">
+      <!-- Demo Image/GIF (chỉ hiện khi ảnh tồn tại và tải thành công) -->
+      <div
+        v-if="showCineDemo"
+        class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100"
+      >
         <img
-          src="/images/cinereserve-demo.gif"
+          :src="'/images/cinereserve-demo.gif'"
           alt="CineReserve Demo"
           class="w-full h-full object-cover"
-          onerror="this.style.display='none'"
+          @error="showCineDemo = false"
         />
-        <span class="p-4 text-center">Demo GIF placeholder (/images/cinereserve-demo.gif)</span>
       </div>
 
       <!-- Problem & Solution -->
@@ -85,7 +87,7 @@
     </article>
 
     <!-- Project 2: TechShop -->
-    <article class="space-y-4 pt-4 border-t border-stone-200">
+    <article class="space-y-4 pt-6 border-t border-stone-200">
       <div>
         <div class="flex flex-wrap items-baseline justify-between gap-2">
           <h3 class="text-lg font-semibold text-stone-900">
@@ -108,15 +110,17 @@
         </p>
       </div>
 
-      <!-- Demo placeholder -->
-      <div class="aspect-video w-full rounded-md bg-stone-100 border border-stone-200 overflow-hidden flex items-center justify-center text-stone-400 text-xs sm:text-sm">
+      <!-- Demo Image/GIF (chỉ hiện khi ảnh tồn tại và tải thành công) -->
+      <div
+        v-if="showTechDemo"
+        class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100"
+      >
         <img
-          src="/images/techshop-demo.gif"
+          :src="'/images/techshop-demo.gif'"
           alt="TechShop Demo"
           class="w-full h-full object-cover"
-          onerror="this.style.display='none'"
+          @error="showTechDemo = false"
         />
-        <span class="p-4 text-center">Demo GIF placeholder (/images/techshop-demo.gif)</span>
       </div>
 
       <!-- Key details -->
@@ -155,7 +159,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useLanguage } from '../composables/useLanguage';
 
 const { isEn } = useLanguage();
+
+// Mặc định cho phép thử load, nếu ảnh chưa có thì @error sẽ gán false và ẩn hoàn toàn khung
+const showCineDemo = ref(true);
+const showTechDemo = ref(true);
 </script>
