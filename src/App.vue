@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[#fafaf9] text-stone-900 selection:bg-stone-200 antialiased">
+  <div class="min-h-screen bg-[#fafaf9] text-stone-900 antialiased">
     <div class="max-w-[720px] mx-auto px-5 sm:px-6 py-12 sm:py-16">
       <Navbar />
       <main class="space-y-16 sm:space-y-20">

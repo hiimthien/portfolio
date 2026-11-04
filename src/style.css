@@ -4,6 +4,16 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background-color: #e7e5e4;
+  color: #1c1917;
+}
+
+::-moz-selection {
+  background-color: #e7e5e4;
+  color: #1c1917;
+}
+
 @layer base {
   body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
