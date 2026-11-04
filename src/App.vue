@@ -1,20 +1,17 @@
 <template>
-  <div class="min-h-screen bg-[#080c14] text-slate-200 selection:bg-teal-500/25 selection:text-teal-300 antialiased">
-    <!-- Navbar -->
-    <Navbar />
-
-    <!-- Main Content Flow: Hero -> Projects (CineReserve) -> Skills -> Experience -> Education -> Contact -->
-    <main>
-      <Hero />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Education />
-      <Contact />
-    </main>
-
-    <!-- Footer -->
-    <Footer />
+  <div class="min-h-screen bg-[#fafaf9] text-stone-900 selection:bg-stone-200 antialiased">
+    <div class="max-w-[720px] mx-auto px-5 sm:px-6 py-12 sm:py-16">
+      <Navbar />
+      <main class="space-y-16 sm:space-y-20">
+        <Hero />
+        <Projects />
+        <Experience />
+        <Skills />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -22,8 +19,8 @@
 import Navbar from './components/Navbar.vue';
 import Hero from './components/Hero.vue';
 import Projects from './components/Projects.vue';
-import Skills from './components/Skills.vue';
 import Experience from './components/Experience.vue';
+import Skills from './components/Skills.vue';
 import Education from './components/Education.vue';
 import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
