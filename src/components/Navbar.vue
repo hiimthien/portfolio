@@ -14,7 +14,7 @@
             <div class="font-display font-bold text-xs sm:text-sm text-slate-100 group-hover:text-teal-300 transition leading-tight tracking-tight">
               Cao Luong Thien
             </div>
-            <div class="text-[10px] text-slate-400 font-mono tracking-tight">Junior Laravel Developer</div>
+            <div class="text-[10px] text-slate-400 font-medium tracking-tight">Software Engineer</div>
           </div>
         </a>
 
@@ -159,7 +159,7 @@ const activeSection = ref('about');
 // Ordered with Projects placed right after About!
 const navItems = [
   { id: 'about', href: '#about', labelEn: 'About', labelVi: 'Giới thiệu' },
-  { id: 'projects', href: '#projects', labelEn: 'Project', labelVi: 'Dự án' },
+  { id: 'projects', href: '#projects', labelEn: 'Projects', labelVi: 'Dự án' },
   { id: 'skills', href: '#skills', labelEn: 'Skills', labelVi: 'Kỹ năng' },
   { id: 'experience', href: '#experience', labelEn: 'Experience', labelVi: 'Kinh nghiệm' },
   { id: 'education', href: '#education', labelEn: 'Education', labelVi: 'Học vấn' },
