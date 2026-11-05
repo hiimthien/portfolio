@@ -134,8 +134,12 @@
           </ul>
         </div>
 
-        <p class="text-stone-600 text-[15px] italic">
-          {{ isEn ? 'What I learned:' : 'Mình học được:' }} [1-2 câu của tôi]
+        <p class="text-stone-600 text-[15px] leading-relaxed">
+          <strong class="font-medium text-stone-800">{{ isEn ? 'What I learned:' : 'Mình học được:' }}</strong>
+          {{ isEn
+            ? ' Gained practical insights into handling high-concurrency race conditions: learned that frontend validation alone is insufficient—true consistency requires combining in-memory distributed locks (Redis SET NX) with database pessimistic locking (SELECT ... FOR UPDATE) to guarantee absolute data integrity under peak loads.'
+            : ' Hiểu sâu bản chất xử lý Race Condition khi mở bán vé cao điểm: phối hợp khóa phân tán trên RAM (Redis SET NX) để phản hồi tức thì với kiểm tra bi quan (SELECT ... FOR UPDATE trong Transaction) ở database nhằm chặn triệt để đặt trùng vé mà không làm nghẽn hệ thống.'
+          }}
         </p>
       </div>
 
@@ -263,8 +267,12 @@
           <li v-else>Backed by 21 backend PHPUnit feature tests and 4 frontend Vitest tests (100% Passed).</li>
         </ul>
 
-        <p class="text-stone-600 text-[15px] italic">
-          {{ isEn ? 'What I learned:' : 'Mình học được:' }} [1-2 câu của tôi]
+        <p class="text-stone-600 text-[15px] leading-relaxed">
+          <strong class="font-medium text-stone-800">{{ isEn ? 'What I learned:' : 'Mình học được:' }}</strong>
+          {{ isEn
+            ? ' Mastered resilient third-party payment integration with cryptographic checksums (HMAC-SHA512), timezone alignment, and idempotent webhook handling; along with architecting end-to-end e-commerce state machines to prevent overselling under concurrent checkouts.'
+            : ' Làm chủ trọn vẹn tích hợp cổng thanh toán trực tuyến bảo mật (HMAC-SHA512, chuẩn hóa múi giờ và Webhook IPN Idempotent); đồng thời xây dựng kiến trúc E-Commerce khép kín từ sản phẩm đa biến thể, khóa tồn kho nguyên tử chống bán vượt (overselling) đến trang quản trị vận hành.'
+          }}
         </p>
       </div>
 
