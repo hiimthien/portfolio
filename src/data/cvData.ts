@@ -42,10 +42,10 @@ export const cvData = {
   personal: {
     name: "Cao Lương Thiện",
     role: {
-      en: "Software Engineer / Backend Developer",
-      vi: "Kỹ sư phần mềm / Backend Developer",
+      en: "Junior PHP / Backend Developer",
+      vi: "Lập trình viên PHP / Backend Developer",
     },
-    subRole: "Laravel 11 · FrankenPHP Octane · Vue 3 · Nuxt 3",
+    subRole: "PHP 8.3 · CodeIgniter 4 · Laravel 11 · Vue 3 · Redis · MySQL",
     location: "Thu Duc City, Ho Chi Minh City, Vietnam",
     phone: "(+84) 388 145 796",
     email: "thiencao.work@gmail.com",
@@ -53,177 +53,31 @@ export const cvData = {
     githubUrl: "https://github.com/hiimthien",
     pdfResumeUrl: "/CV_Cao_Luong_Thien_PHP_Developer.pdf",
     bio: {
-      en: "Software Engineer specializing in PHP/Laravel backend architecture and modern Vue/Nuxt frontends. 1+ year of production e-commerce experience combined with verified production-grade personal projects solving concurrency control, high-throughput runtimes with FrankenPHP Octane, and end-to-end full-stack workflows.",
-      vi: "Kỹ sư phần mềm định hướng chuyên sâu kiến trúc backend PHP/Laravel và frontend hiện đại Vue/Nuxt. Sở hữu 1+ năm kinh nghiệm thực tế trong lĩnh vực e-commerce kết hợp các dự án full-stack giải quyết bài toán chống trùng race condition, kiến trúc chịu tải cao với FrankenPHP Octane và kiểm thử tự động.",
+      en: "Junior PHP Developer with 1 year of experience building e-commerce systems with third-party integrations (11 fulfillment providers, TikTok Shop) using CodeIgniter 4, Redis and MySQL. Strong in asynchronous processing, secure webhook handling and query optimization. Self-taught Laravel through two personal projects covering concurrency control, payments and real-time features. Seeking a Backend PHP / Laravel role.",
+      vi: "Lập trình viên PHP với 1 năm kinh nghiệm xây dựng hệ thống thương mại điện tử tích hợp đối tác thứ ba (11 đơn vị fulfillment, TikTok Shop) bằng CodeIgniter 4, Redis và MySQL. Thế mạnh về xử lý bất đồng bộ, webhook bảo mật và tối ưu hóa truy vấn cơ sở dữ liệu. Tự học và làm chủ Laravel qua 2 dự án cá nhân chuyên sâu về kiểm soát đồng thời (concurrency), thanh toán trực tuyến và tính năng thời gian thực. Định hướng tìm kiếm vị trí Backend PHP / Laravel.",
     },
   },
 
-  skillCategories: [
-    {
-      title: {
-        en: "Backend Development",
-        vi: "Phát triển Backend",
-      },
-      icon: "Server",
-      items: [
-        {
-          name: "Laravel 11",
-          context: {
-            en: "CineReserve · ConsultFlow · TechShop",
-            vi: "CineReserve · ConsultFlow · TechShop",
-          },
-          description: {
-            en: "Service-Repository pattern, Form Requests, API Resources, Eloquent ORM, and background jobs.",
-            vi: "Service-Repository pattern, Form Request validation, API Resource, Eloquent ORM và xử lý hàng đợi.",
-          },
-        },
-        {
-          name: "FrankenPHP & Laravel Octane",
-          context: {
-            en: "SaaS Project · ConsultFlow",
-            vi: "Dự án SaaS · ConsultFlow",
-          },
-          description: {
-            en: "High-throughput asynchronous worker mode, serving API requests with microsecond latency without bootstrapping overhead.",
-            vi: "Vận hành Octane worker mode trên nền FrankenPHP, phục vụ request với độ trễ tối thiểu mà không phải bootstrap framework lặp lại.",
-          },
-        },
-        {
-          name: "PHP 8.x & CodeIgniter 4",
-          context: {
-            en: "Production · TTR Group",
-            vi: "Production · TTR Group",
-          },
-          description: {
-            en: "Core production backend stack at TTR Group: RESTful APIs, controllers, custom filters, and clean service layers.",
-            vi: "Nền tảng backend chính tại TTR Group: thiết kế RESTful API, controller, custom filter và cấu trúc service rõ ràng.",
-          },
-        },
-        {
-          name: "Webhook & API Integrations",
-          context: {
-            en: "Production · TTR Group",
-            vi: "Production · TTR Group",
-          },
-          description: {
-            en: "Cryptographic HMAC verification, event routing, idempotency handling, and third-party logistics synchronization.",
-            vi: "Xác thực chữ ký HMAC, định tuyến sự kiện, xử lý idempotency chống trùng lặp dữ liệu và đồng bộ vận chuyển.",
-          },
-        },
-      ],
+  education: {
+    institution: {
+      en: "Nha Trang University",
+      vi: "Đại học Nha Trang",
     },
-    {
-      title: {
-        en: "Database & Background Processing",
-        vi: "Cơ sở dữ liệu & Xử lý nền",
-      },
-      icon: "Database",
-      items: [
-        {
-          name: "MySQL 8.0 & PostgreSQL 14",
-          description: {
-            en: "Relational schema design, composite indexing, slow query analysis, and ACID transactional integrity.",
-            vi: "Thiết kế schema, đánh composite index, phân tích slow query và đảm bảo tính toàn vẹn giao dịch ACID.",
-          },
-        },
-        {
-          name: "Redis Concurrency & Distributed Locks",
-          description: {
-            en: "Two-Phase locking strategy with atomic temporary holding keys (SET NX EX) to prevent race conditions.",
-            vi: "Chiến lược khóa hai lớp (Two-Phase Locking) với khóa phân tán nguyên tử Redis (SET NX EX) chống Race Condition.",
-          },
-        },
-        {
-          name: "Redis Queue Workers",
-          description: {
-            en: "Background job processing for bulk product mapping, variant synchronization, and automated retry logic.",
-            vi: "Xử lý hàng đợi nền cho đồng bộ biến thể sản phẩm, cập nhật batch và cơ chế retry tự động.",
-          },
-        },
-        {
-          name: "Transactions & Data Integrity",
-          description: {
-            en: "Pessimistic database locking (`SELECT FOR UPDATE`) and transactional wallet ledgers.",
-            vi: "Khóa bi quan tầng cơ sở dữ liệu (`SELECT FOR UPDATE`) và sổ cái giao dịch tài chính đảm bảo toàn vẹn tuyệt đối.",
-          },
-        },
-      ],
+    degree: {
+      en: "Associate Degree in Information Technology",
+      vi: "Cao đẳng Công nghệ Thông tin",
     },
-    {
-      title: {
-        en: "Frontend Development",
-        vi: "Phát triển Frontend",
-      },
-      icon: "Layout",
-      items: [
-        {
-          name: "Vue.js 3 & Composition API",
-          description: {
-            en: "Responsive single-page applications and management interfaces built with `<script setup>`, composables, and Pinia.",
-            vi: "Xây dựng ứng dụng SPA và giao diện quản trị phản hồi nhanh với `<script setup>`, composables và Pinia.",
-          },
-        },
-        {
-          name: "Nuxt 3 (SSR & Full-Stack)",
-          description: {
-            en: "Modern server-side rendering, universal routing, auto-imports, and clean layout architectures in ConsultFlow.",
-            vi: "Kiến trúc Server-Side Rendering với Nuxt 3, định tuyến thông minh và tối ưu trải nghiệm người dùng trong ConsultFlow.",
-          },
-        },
-        {
-          name: "TypeScript & JavaScript (ES6+)",
-          description: {
-            en: "Strict type-safe interfaces, handling asynchronous API flows (async/await), and modern DOM interactions.",
-            vi: "Strict type-safe interface, xử lý luồng API bất đồng bộ (async/await) và tương tác DOM hiện đại.",
-          },
-        },
-        {
-          name: "Tailwind CSS (v3 & v4)",
-          description: {
-            en: "Utility-first responsive layouts, modern dark-mode aesthetic, and polished developer interfaces.",
-            vi: "Layout responsive utility-first, phong cách dark-mode hiện đại và các component tinh tế.",
-          },
-        },
-      ],
-    },
-    {
-      title: {
-        en: "DevOps & Tools",
-        vi: "DevOps & Công cụ",
-      },
-      icon: "Wrench",
-      items: [
-        {
-          name: "Docker & Docker Compose",
-          description: {
-            en: "Containerized multi-service stacks (FrankenPHP, PHP-FPM, MySQL, PostgreSQL, Redis, Nginx, Nuxt).",
-            vi: "Đóng gói kiến trúc đa container hoàn chỉnh (FrankenPHP, PHP-FPM, MySQL, PostgreSQL, Redis, Nginx, Nuxt).",
-          },
-        },
-        {
-          name: "Automated Testing (PHPUnit / Pest)",
-          description: {
-            en: "Feature and unit test suites covering race conditions, payment idempotency, order flows, and warranty claims.",
-            vi: "Bộ test Feature/Unit bao phủ luồng Race Condition, Webhook Idempotency, đặt hàng và bảo hành.",
-          },
-        },
-        {
-          name: "GitHub Actions CI/CD",
-          description: {
-            en: "Automated pipelines executing test suites, Laravel Pint style formatting, and vue-tsc type checking.",
-            vi: "Pipeline CI tự động kiểm thử, chuẩn hóa coding style với Laravel Pint và type-check với vue-tsc.",
-          },
-        },
-        {
-          name: "MinIO & Media Pipelines",
-          description: {
-            en: "S3-compatible object storage, MIME validation, automated thumbnail generation, and WebP conversion.",
-            vi: "Lưu trữ đối tượng chuẩn S3, kiểm tra MIME type, tự động sinh thumbnail và nén ảnh WebP.",
-          },
-        },
-      ],
-    },
-  ] as SkillCategory[],
+    period: "Sep 2019 – Sep 2022",
+    gpa: "3.4 / 4.0",
+  },
+
+  skills: {
+    languages: "PHP, JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3",
+    backend: "CodeIgniter 4 (production), Laravel 11 (personal projects), RESTful APIs, Webhook Processing, Redis Queues",
+    frontend: "Vue.js 3 (Composition API), Pinia, Vue Router, Tailwind CSS, Bootstrap",
+    databasesAndCaching: "MySQL (Query Optimization, Composite Indexing, Transactions), Redis (Caching, Queue, Distributed Locks)",
+    toolsAndIntegrations: "TikTok Shop API, VNPay, Google OAuth, Telegram Bot API, MinIO, PHPUnit, Vitest, Git, Docker, Postman, Vite",
+  },
 
   experiences: [
     {
@@ -233,174 +87,144 @@ export const cvData = {
         vi: "Lập trình viên PHP / Full-Stack",
       },
       period: "Sep 2025 – Present",
-      location: "Thu Duc City, Ho Chi Minh City",
+      location: "Thu Duc City, Ho Chi Minh City, Vietnam",
       type: { en: "Professional Experience", vi: "Kinh nghiệm thực tế" },
       isPrimary: true,
       summary: {
-        en: "Developing and maintaining backend services and internal management interfaces for an enterprise e-commerce platform.",
-        vi: "Phát triển và bảo trì các dịch vụ backend và giao diện quản trị nội bộ cho nền tảng thương mại điện tử doanh nghiệp.",
+        en: "Project: E-commerce Management Platform — Developing and maintaining backend services and internal management interfaces for an enterprise e-commerce platform.",
+        vi: "Dự án: E-commerce Management Platform — Phát triển và bảo trì các dịch vụ backend và giao diện quản trị nội bộ cho nền tảng thương mại điện tử.",
       },
       points: {
         en: [
-          "Developed and maintained backend services and RESTful APIs using PHP (CodeIgniter 4) alongside responsive internal admin interfaces in Vue.js 3.",
-          "Implemented TikTok Shop webhook processing with cryptographic signature verification, event routing, and deduplication logic; applied Factory and Strategy patterns for external fulfillment integrations.",
-          "Engineered Redis background queue workers to handle bulk product mapping, variant updates, and automated retries for large payloads.",
-          "Delivered the end-to-end Return/Refund Ticket module with multi-step business eligibility checks in CodeIgniter 4 and a reactive Vue.js 3 + Pinia management UI.",
-          "Optimized MySQL performance by eliminating N+1 queries, indexing slow queries, and leveraging Redis caching; integrated MinIO object storage and Telegram Bot API alerts with isolated fault handling.",
+          "Integrated 11 print-on-demand fulfillment providers using Strategy and Factory patterns, normalizing different third-party APIs behind one interface; adding a provider only requires a new adapter class. Automated order routing and shipment tracking sync.",
+          "Moved heavy tasks (catalog mapping, variant sync, batch price updates) to Redis queue workers with automatic retry on failed payloads, keeping the UI responsive and avoiding request timeouts.",
+          "Built TikTok Shop webhook pipelines with HMAC signature validation, event routing (order, product, return/refund) and deduplication to prevent duplicate processing on redelivered events.",
+          "Removed N+1 queries, added composite indexes on high-traffic tables and introduced Redis caching to reduce database load.",
+          "Delivered the Return/Refund Ticket module end to end: multi-status approval workflow in CodeIgniter 4 and a reactive management UI in Vue 3 (Pinia).",
+          "Integrated AI content and image services with MinIO object storage, implementing MIME validation, thumbnail generation, WEBP conversion and memory cleanup.",
+          "Integrated Telegram Bot API for real-time order and system alerts, using isolated error handling so external API failures do not affect core transaction flows.",
         ],
         vi: [
-          "Phát triển và bảo trì các dịch vụ backend và RESTful API bằng PHP (CodeIgniter 4) cùng giao diện quản trị nội bộ phản hồi nhanh bằng Vue.js 3.",
-          "Xây dựng luồng tiếp nhận webhook TikTok Shop với xác thực chữ ký số, định tuyến sự kiện và chống trùng lặp; áp dụng Factory và Strategy pattern để đồng bộ đơn hàng với các đối tác vận chuyển.",
-          "Vận hành hàng đợi nền Redis xử lý ánh xạ danh mục, đồng bộ biến thể sản phẩm và cơ chế retry tự động cho dữ liệu lớn.",
-          "Xây dựng trọn vẹn module Khiếu nại - Đổi/Trả hàng (Return/Refund Ticket) trong CodeIgniter 4 kèm giao diện theo dõi phản ứng nhanh bằng Vue.js 3 kết hợp Pinia.",
-          "Tối ưu hiệu năng MySQL: loại bỏ lỗi N+1, đánh chỉ mục truy vấn chậm và tận dụng cache Redis; tích hợp lưu trữ MinIO và cảnh báo Telegram Bot với cơ chế cách ly lỗi.",
+          "Tích hợp 11 đơn vị fulfillment (print-on-demand) áp dụng Strategy và Factory patterns, chuẩn hóa các API bên ngoài về chung một interface; thêm đối tác mới chỉ cần tạo adapter class. Tự động định tuyến đơn hàng và đồng bộ theo dõi vận chuyển.",
+          "Chuyển các tác vụ nặng (ánh xạ danh mục, đồng bộ biến thể, cập nhật giá hàng loạt) sang Redis queue workers với cơ chế tự động thử lại khi lỗi, giữ giao diện phản hồi nhanh và tránh timeout request.",
+          "Xây dựng pipeline tiếp nhận webhook TikTok Shop với xác thực chữ ký HMAC, định tuyến sự kiện (đơn hàng, sản phẩm, đổi/trả) và chống trùng lặp dữ liệu khi webhook gửi lại.",
+          "Loại bỏ triệt để N+1 queries, thêm chỉ mục composite trên các bảng lưu lượng cao và áp dụng Redis caching để giảm tải cơ sở dữ liệu.",
+          "Xây dựng trọn vẹn module Khiếu nại - Đổi/Trả hàng (Return/Refund Ticket): quy trình phê duyệt đa trạng thái trên CodeIgniter 4 và giao diện theo dõi phản ứng nhanh bằng Vue 3 (Pinia).",
+          "Tích hợp dịch vụ nội dung và hình ảnh AI với kho lưu trữ đối tượng MinIO: kiểm tra MIME type, sinh thumbnail tự động, chuyển đổi WebP và giải phóng bộ nhớ.",
+          "Tích hợp Telegram Bot API cảnh báo đơn hàng và lỗi hệ thống theo thời gian thực, có cơ chế cách ly lỗi độc lập để sự cố API ngoài không ảnh hưởng đến luồng giao dịch chính.",
         ],
       },
-      technologies: ["PHP", "CodeIgniter 4", "Vue 3", "Pinia", "MySQL", "Redis", "TikTok Shop API", "MinIO"],
+      technologies: ["PHP", "CodeIgniter 4", "Vue 3", "Pinia", "MySQL", "Redis", "MinIO", "TikTok Shop API", "Telegram Bot API"],
+    },
+    {
+      company: "Mandatory Military Service",
+      role: {
+        en: "Active Duty Service Member",
+        vi: "Hạ sĩ quan / Chiến sĩ thực hiện nghĩa vụ quân sự",
+      },
+      period: "Feb 2023 – Jan 2025",
+      location: "Vietnam",
+      type: { en: "National Service", vi: "Nghĩa vụ Quốc gia" },
+      isPrimary: false,
+      summary: {
+        en: "Completed 2-year mandatory active national military service obligation with disciplined teamwork and operational compliance.",
+        vi: "Hoàn thành 2 năm nghĩa vụ quân sự theo luật định với tinh thần kỷ luật cao và khả năng phối hợp đồng đội chuẩn mực.",
+      },
+      points: {
+        en: [
+          "Fulfilled full-term active military service obligation with strict discipline, resilience, and adaptability.",
+          "Maintained operational readiness and demonstrated high accountability in team assignments.",
+        ],
+        vi: [
+          "Hoàn thành toàn diện thời gian phục vụ tại ngũ 2 năm với tính kỷ luật nghiêm túc, kiên trì và tác phong chuẩn mực.",
+          "Rèn luyện ý thức trách nhiệm cao, tinh thần tập thể và khả năng thích ứng linh hoạt trong mọi hoàn cảnh.",
+        ],
+      },
+      technologies: ["Discipline", "Teamwork", "Problem Solving"],
     },
     {
       company: "TMA Solutions",
       role: {
-        en: "Software Engineering Trainee",
+        en: "Software Engineering Trainee (TMA Foundation Training)",
         vi: "Thực tập sinh Kỹ sư phần mềm (TMA Foundation Training)",
       },
-      period: "Nov 2023 – Dec 2023",
+      period: "Nov 2022 – Dec 2022",
       location: "Quy Nhon City, Vietnam",
       type: { en: "Foundation Training", vi: "Đào tạo nền tảng" },
       isPrimary: false,
       summary: {
-        en: "Completed foundation software engineering training covering web backend fundamentals and professional development workflows.",
-        vi: "Hoàn thành khóa đào tạo nền tảng kỹ sư phần mềm về kiến trúc web backend và quy trình làm việc chuyên nghiệp.",
+        en: "Company training and probation program covering web backend fundamentals and professional software workflows.",
+        vi: "Chương trình đào tạo nền tảng và thử việc của công ty về kiến trúc web backend và quy trình phát triển chuyên nghiệp.",
       },
       points: {
         en: [
-          "Gained practical software engineering experience building RESTful backend services and understanding core web application patterns.",
-          "Collaborated in an Agile/Scrum team environment, applying standardized Git workflows, code reviews, and industry version control practices.",
+          "Built RESTful backend services and learned core web application patterns.",
+          "Worked in an Agile/Scrum team using Git workflows and code reviews.",
         ],
         vi: [
           "Thực hành xây dựng dịch vụ backend RESTful và tiếp cận các quy chuẩn thiết kế ứng dụng web cốt lõi.",
-          "Làm việc nhóm theo quy trình Agile/Scrum, tuân thủ các quy tắc Git branching và review mã nguồn.",
+          "Làm việc nhóm theo quy trình Agile/Scrum, tuân thủ các quy tắc Git workflow và code review.",
         ],
       },
       technologies: ["PHP", "RESTful APIs", "Git", "Agile / Scrum"],
     },
   ] as ExperienceItem[],
 
-  featuredProject: {
-    name: "CineReserve",
-    category: {
-      en: "Featured Concurrency Project",
-      vi: "Dự án Tiêu Biểu về Concurrency",
-    },
-    tagline: {
-      en: "Real-time Cinema Ticket Booking System solving High-Concurrency Race Conditions",
-      vi: "Hệ thống đặt vé xem phim trực tuyến giải quyết bài toán Race Condition khi mở bán cao điểm",
-    },
-    description: {
-      en: "A production-grade full-stack project designed to eliminate seat double-booking race conditions during high-volume spikes. Employs a Two-Phase Locking strategy with Redis atomic locks in RAM and pessimistic database locking at checkout, combined with WebSocket broadcasting via Laravel Reverb.",
-      vi: "Dự án full-stack tập trung giải quyết bài toán chống trùng ghế đồng thời khi mở bán vé cao điểm. Áp dụng chiến lược khóa 2 lớp (Two-Phase Locking) với Redis atomic lock ở tầng RAM và Pessimistic Locking ở tầng cơ sở dữ liệu khi thanh toán, đồng bộ trực tiếp qua WebSocket Laravel Reverb.",
-    },
-    githubUrl: "https://github.com/hiimthien/cinereserve",
-    technologies: [
-      "PHP 8.3",
-      "Laravel 11",
-      "Vue 3",
-      "TypeScript",
-      "Redis",
-      "Laravel Reverb",
-      "MySQL 8.0",
-      "Docker Compose",
-      "PHPUnit CI",
-    ],
-    highlights: [
-      {
-        title: {
-          en: "Two-Phase Locking (Redis SET NX EX + DB Pessimistic Lock)",
-          vi: "Chiến lược khóa 2 lớp (Redis SET NX EX + Khóa bi quan MySQL)",
-        },
-        detail: {
-          en: "When a user picks a seat, Redis executes `SET lock:showtime:{id}:seat:{id} {session_id} NX EX 600` in ~1-2ms, instantly deflecting concurrent clicks without database overhead. Final confirmation executes within a MySQL pessimistic transaction (`SELECT ... FOR UPDATE`).",
-          vi: "Khi người dùng chọn ghế, Redis thực thi lệnh `SET lock:showtime:{id}:seat:{id} {session_id} NX EX 600` chỉ trong ~1-2ms, chặn tức thì các click đồng thời mà không đè tải I/O lên MySQL. Bước xác nhận cuối cùng dùng khóa bi quan (`SELECT FOR UPDATE`) trong transaction.",
-        },
-      },
-      {
-        title: {
-          en: "Real-Time Broadcast via Laravel Reverb & Echo",
-          vi: "Đồng bộ sơ đồ ghế thời gian thực qua Laravel Reverb & Echo",
-        },
-        detail: {
-          en: "Seat state transitions (holding, available, booked) dispatch WebSocket broadcast events via Laravel Reverb. Connected Vue 3 clients update seat map colors reactively with zero polling overhead.",
-          vi: "Mỗi thay đổi trạng thái ghế đều kích hoạt sự kiện phát thanh WebSocket qua Laravel Reverb. Các client Vue 3 cập nhật màu sắc sơ đồ ghế tức thì mà không cần polling API liên tục.",
-        },
-      },
-      {
-        title: {
-          en: "Anti-Fraud Check-In & Idempotent Webhook Handling",
-          vi: "Soát vé QR chống gian lận & Xử lý Webhook Idempotency",
-        },
-        detail: {
-          en: "Implemented TicketCheckInService with tamper-evident QR code validation and idempotent webhook processing to guarantee orders are never fulfilled twice upon external retries.",
-          vi: "Triển khai TicketCheckInService kiểm tra mã QR chống quét trùng vé và xử lý webhook idempotent bảo đảm đơn hàng không bao giờ bị kích hoạt hai lần khi có retry.",
-        },
-      },
-    ],
-  },
-
-  otherProjects: [
+  projects: [
     {
-      id: "consultflow",
-      name: "ConsultFlow",
+      id: "cinereserve",
+      name: "CineReserve",
       category: {
-        en: "High-Performance SaaS Platform",
-        vi: "Nền tảng SaaS Hiệu Năng Cao",
+        en: "Real-time Cinema Ticket Booking System",
+        vi: "Hệ thống đặt vé xem phim trực tuyến thời gian thực",
       },
       tagline: {
-        en: "SaaS Booking & Consultation Platform powered by Laravel 11 & FrankenPHP Octane",
-        vi: "Nền tảng SaaS đặt lịch & tư vấn trực tuyến với Laravel 11 & FrankenPHP Octane",
+        en: "Real-time Cinema Ticket Booking System solving High-Concurrency Race Conditions",
+        vi: "Hệ thống đặt vé xem phim trực tuyến giải quyết bài toán Race Condition khi mở bán cao điểm",
       },
       description: {
-        en: "A modern, high-throughput SaaS booking platform orchestrating multi-role consultations (Consultant, Client, Admin), automated calendar slot conflict prevention, and ledger-based wallet transactions.",
-        vi: "Nền tảng SaaS đặt lịch tư vấn chịu tải cao, hỗ trợ đa vai trò (Chuyên gia, Khách hàng, Quản trị), thuật toán chống trùng lịch hẹn và quản lý ví giao dịch nội bộ.",
+        en: "A personal project solving concurrent seat selection race conditions during high-volume traffic. Combines Redis distributed locks (SET NX EX) with MySQL pessimistic locking (SELECT FOR UPDATE) inside transactions, paired with Laravel Reverb WebSockets broadcasting.",
+        vi: "Dự án cá nhân giải quyết bài toán Race Condition khi nhiều người cùng chọn một ghế. Kết hợp khóa phân tán Redis (SET NX EX 10 phút) với khóa bi quan MySQL (SELECT FOR UPDATE) trong transaction, phát sóng WebSocket qua Laravel Reverb.",
       },
-      githubUrl: "https://github.com/hiimthien/saas-booking",
+      githubUrl: "https://github.com/hiimthien/cinereserve",
       technologies: [
+        "PHP 8.3",
         "Laravel 11",
-        "FrankenPHP (Octane)",
-        "Nuxt 3",
-        "PostgreSQL 14",
+        "Vue 3 (TypeScript)",
         "Redis",
+        "Laravel Reverb",
+        "MySQL 8.0",
         "Docker Compose",
-        "Feature Tests",
       ],
       highlights: [
         {
           title: {
-            en: "FrankenPHP Octane Worker Mode",
-            vi: "Vận hành FrankenPHP Octane Worker Mode",
+            en: "Two-Phase Distributed Locking Strategy",
+            vi: "Chiến lược khóa hai pha (Two-Phase Locking)",
           },
           detail: {
-            en: "Configured Laravel Octane on top of FrankenPHP to keep application bootstrap in memory, achieving sub-millisecond API response times and superior concurrency throughput.",
-            vi: "Cấu hình Laravel Octane trên nền FrankenPHP giữ framework thường trú trong RAM, đem lại tốc độ phản hồi cực nhanh và khả năng xử lý đồng thời vượt trội.",
+            en: "Prevented double-booking under concurrent seat reservations by combining Redis distributed locks (SET NX EX) with MySQL pessimistic locking (SELECT FOR UPDATE) inside transactions.",
+            vi: "Ngăn chặn hoàn toàn đặt trùng vé khi mở bán cao điểm bằng cách kết hợp Redis distributed locks (SET NX EX) với MySQL pessimistic locking (SELECT FOR UPDATE) bên trong transaction.",
           },
         },
         {
           title: {
-            en: "Conflict-Free Scheduling Engine",
-            vi: "Thuật toán kiểm soát lịch hẹn chống trùng giờ",
+            en: "Live Seat Availability Broadcasting",
+            vi: "Phát sóng trạng thái ghế theo thời gian thực",
           },
           detail: {
-            en: "Engineered slot calculation and booking conflict prevention logic with database transactions to strictly guarantee overlapping time slots cannot be double-booked.",
-            vi: "Thuật toán tính toán khung giờ trống và cơ chế kiểm soát xung đột lịch hẹn bọc trong database transaction, loại bỏ hoàn toàn rủi ro trùng lịch của chuyên gia.",
+            en: "Broadcast live seat availability to all clients with Laravel Reverb (WebSockets) and a reactive seat map built in Vue 3 + Pinia.",
+            vi: "Phát sóng trạng thái ghế theo thời gian thực đến toàn bộ người dùng bằng Laravel Reverb (WebSockets) và sơ đồ ghế phản ứng nhanh viết bằng Vue 3 + Pinia.",
           },
         },
         {
           title: {
-            en: "Ledger-Based Wallet System",
-            vi: "Hệ thống ví số dư mô hình sổ cái giao dịch",
+            en: "Idempotent Webhooks & QR Ticket Check-In",
+            vi: "Webhook thanh toán idempotent & Soát vé mã QR",
           },
           detail: {
-            en: "Architected internal wallet service with immutable transaction history, ensuring financial balance consistency during booking holds, deductions, and payouts.",
-            vi: "Xây dựng WalletService theo mô hình sổ cái giao dịch, bảo toàn tính toàn vẹn số dư tài khoản khi giữ tiền đặt hẹn, trừ phí và thanh toán.",
+            en: "Implemented idempotent payment webhooks, QR-based ticket check-in and automatic reservation expiration.",
+            vi: "Xử lý webhook thanh toán idempotent, quét mã QR soát vé tại rạp và cơ chế tự động giải phóng ghế khi hết thời gian giữ chỗ.",
           },
         },
       ],
@@ -409,74 +233,60 @@ export const cvData = {
       id: "techshop",
       name: "TechShop",
       category: {
-        en: "Full-Stack Retail E-Commerce",
-        vi: "Thương Mại Điện Tử Bán Lẻ",
+        en: "Full-Stack Retail Tech E-Commerce & CMS",
+        vi: "Thương mại điện tử thiết bị công nghệ & Hệ thống quản trị",
       },
       tagline: {
         en: "Full-Stack Retail Tech E-Commerce & Administrative Operations Hub",
         vi: "Hệ thống thương mại điện tử thiết bị công nghệ & trung tâm quản trị vận hành",
       },
       description: {
-        en: "An end-to-end e-commerce platform built with Laravel 11 REST API and Vue 3 (Pinia), featuring dynamic catalog filtering, coupon validation, order state machines, and warranty claim management.",
-        vi: "Hệ thống thương mại điện tử thiết bị công nghệ toàn diện xây dựng trên Laravel 11 REST API và Vue 3 (Pinia), tích hợp bộ lọc danh mục động, mã giảm giá, máy trạng thái đơn hàng và xử lý bảo hành.",
+        en: "A personal project building a full retail e-commerce flow from storefront to admin dashboard. Features clean Service-Repository pattern, atomic inventory decrements, VNPay payment reconciliation, and real-time events.",
+        vi: "Dự án cá nhân xây dựng quy trình thương mại điện tử hoàn chỉnh từ storefront đến admin dashboard. Cấu trúc Service-Repository pattern, trừ tồn kho nguyên tử, đối soát VNPay và sự kiện thời gian thực.",
       },
       githubUrl: "https://github.com/hiimthien/TechShop",
       technologies: [
-        "Laravel 11",
+        "PHP 8.3",
+        "Laravel 11 (Sanctum, Reverb, Socialite)",
+        "MySQL",
         "Vue 3",
         "TypeScript",
         "Pinia",
         "Tailwind CSS v4",
-        "VNPay Gateway (HMAC-SHA512)",
-        "MySQL 8.0",
-        "21 Feature Tests",
+        "Vite",
       ],
       highlights: [
         {
           title: {
-            en: "VNPay Sandbox Payment Gateway & Idempotent Audit",
-            vi: "Tích hợp cổng VNPay Sandbox & Đối soát Idempotent",
+            en: "Service-Repository & Unified JSON Resources",
+            vi: "Kiến trúc Service-Repository & Chuẩn hóa API",
           },
           detail: {
-            en: "Engineered end-to-end online payment integration with HMAC-SHA512 checksum validation, automatic timezone handling (GMT+7), idempotent Webhook IPN updates, and in-app instant retry flow.",
-            vi: "Triển khai cổng thanh toán trực tuyến bảo mật với mã hóa HMAC-SHA512, chuẩn hóa múi giờ Việt Nam, xử lý Webhook IPN idempotent và tính năng thử lại thanh toán tức thì.",
+            en: "Structured the backend with a Service-Repository pattern, thin REST controllers, Form Request validation and unified JSON Resources.",
+            vi: "Cấu trúc backend chuẩn Service-Repository pattern, thin REST controllers, Form Request validation và chuẩn hóa API Resource.",
           },
         },
         {
           title: {
-            en: "Atomic Inventory Locks & Anti-Overselling Checkout",
-            vi: "Khóa tồn kho nguyên tử & Chống bán vượt số lượng",
+            en: "Atomic Inventory Decrement & VNPay IPN Handler",
+            vi: "Khóa tồn kho nguyên tử & Đối soát cổng VNPay",
           },
           detail: {
-            en: "Protected stock counts under high concurrency using atomic cache locks and conditional database decrements during checkout, guaranteeing zero overselling.",
-            vi: "Bảo vệ tồn kho đa người dùng bằng atomic cache lock và trừ kho có điều kiện trong database transaction, triệt tiêu rủi ro bán vượt tồn kho.",
+            en: "Built the checkout pipeline with atomic inventory decrement (anti-overselling), coupon calculation and a secure VNPay IPN handler (SHA512 checksum).",
+            vi: "Xây dựng pipeline checkout trừ tồn kho nguyên tử (atomic decrement chống bán vượt), tính toán mã giảm giá và bộ xử lý webhook VNPay IPN bảo mật (HMAC-SHA512 checksum).",
           },
         },
         {
           title: {
-            en: "100% Studio Photography Catalog & 21 Feature Tests",
-            vi: "Kho 100% ảnh Studio cục bộ & Bộ 21 test Feature",
+            en: "Google OAuth, Real-time Events & Automated Testing",
+            vi: "Google OAuth, Sự kiện thời gian thực & Kiểm thử tự động",
           },
           detail: {
-            en: "Organized 52 products (95 variants) with high-res studio photography locally stored, converted dynamic category filters to SEO-friendly slugs, and achieved 100% pass on 21 backend feature tests.",
-            vi: "Chuẩn hóa 52 sản phẩm (95 biến thể) với ảnh studio chất lượng cao lưu trữ local, chuyển đổi bộ lọc sang slug chuẩn SEO và đạt 100% pass trên bộ 21 test Feature.",
+            en: "Added Google OAuth 2.0 login, real-time events via Laravel Reverb/Echo, an admin analytics dashboard and automated tests with PHPUnit and Vitest.",
+            vi: "Tích hợp đăng nhập Google OAuth 2.0, sự kiện thời gian thực qua Laravel Reverb/Echo, dashboard quản trị phân tích doanh thu và kiểm thử tự động với PHPUnit & Vitest.",
           },
         },
       ],
     },
-  ] as ProjectItem[],
-
-  education: {
-    institution: "Nha Trang University",
-    degree: {
-      en: "Associate Degree in Information Technology",
-      vi: "Cử nhân Cao đẳng Công nghệ Thông tin",
-    },
-    period: "Sep 2019 – Sep 2022",
-    gpa: "3.4 / 4.0",
-    description: {
-      en: "Completed core coursework in Data Structures, Object-Oriented Programming, Relational Databases, and Computer Networks.",
-      vi: "Hoàn thành chương trình đào tạo nền tảng về Cấu trúc dữ liệu & Giải thuật, Lập trình hướng đối tượng (OOP), Cơ sở dữ liệu quan hệ và Mạng máy tính.",
-    },
-  },
+  ],
 };

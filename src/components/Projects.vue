@@ -145,7 +145,7 @@
 
       <!-- Plain Text Stack (No pills) -->
       <div class="text-xs sm:text-sm text-stone-600 pt-1">
-        <span class="font-medium text-stone-800">Stack:</span> Laravel 11, Vue 3, TypeScript, Redis, MySQL, Docker
+        <span class="font-medium text-stone-800">Stack:</span> PHP 8.3, Laravel 11, Vue 3 (TypeScript), Redis, Laravel Reverb, MySQL 8.0, Docker Compose
       </div>
     </article>
 
@@ -278,7 +278,7 @@
 
       <!-- Plain Text Stack (No pills) -->
       <div class="text-xs sm:text-sm text-stone-600 pt-1">
-        <span class="font-medium text-stone-800">Stack:</span> Laravel 11, Vue 3, TypeScript, Pinia, MySQL
+        <span class="font-medium text-stone-800">Stack:</span> PHP 8.3, Laravel 11 (Sanctum, Reverb, Socialite), MySQL, Vue 3, TypeScript, Pinia, Tailwind CSS v4, Vite
       </div>
     </article>
   </section>

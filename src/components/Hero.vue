@@ -5,14 +5,14 @@
         Cao Lương Thiện
       </h1>
       <p class="text-stone-600 text-base mt-1">
-        Junior Backend Developer (PHP) &middot; {{ isEn ? 'Ho Chi Minh City' : 'TP. Hồ Chí Minh' }}
+        Junior PHP Developer &middot; {{ isEn ? 'Thu Duc City, Ho Chi Minh City' : 'TP. Thủ Đức, TP. Hồ Chí Minh' }}
       </p>
     </div>
 
-    <p class="text-stone-800 text-[16.5px] leading-relaxed">
+    <p class="text-stone-800 text-[16px] leading-relaxed">
       {{ isEn
-        ? "I'm Thien, a PHP developer with over 1 year of experience. I currently work on backend (CodeIgniter 4) and Vue 3 interfaces at TTR Group. Outside work, I build personal projects with Laravel to learn more. I'm looking for a team environment to collaborate and grow faster."
-        : "Mình là Thiện, lập trình viên PHP với hơn 1 năm kinh nghiệm. Hiện mình làm backend (CodeIgniter 4) và giao diện Vue 3 tại TTR Group. Ngoài giờ làm, mình làm các dự án riêng bằng Laravel để học thêm. Mình đang tìm một môi trường để làm việc cùng team và học nhanh hơn."
+        ? "Junior PHP Developer with 1 year of experience building e-commerce systems with third-party integrations (11 fulfillment providers, TikTok Shop) using CodeIgniter 4, Redis and MySQL. Strong in asynchronous processing, secure webhook handling and query optimization. Self-taught Laravel through two personal projects covering concurrency control, payments and real-time features. Seeking a Backend PHP / Laravel role."
+        : "Lập trình viên PHP với 1 năm kinh nghiệm xây dựng hệ thống thương mại điện tử tích hợp đối tác thứ ba (11 đơn vị fulfillment, TikTok Shop) bằng CodeIgniter 4, Redis và MySQL. Thế mạnh về xử lý bất đồng bộ, webhook bảo mật và tối ưu hóa truy vấn cơ sở dữ liệu. Tự học và làm chủ Laravel qua 2 dự án cá nhân chuyên sâu về kiểm soát đồng thời (concurrency), thanh toán trực tuyến và tính năng thời gian thực. Định hướng tìm kiếm vị trí Backend PHP / Laravel."
       }}
     </p>
 
@@ -24,12 +24,12 @@
         rel="noopener noreferrer"
         class="underline underline-offset-4 decoration-stone-300 hover:decoration-emerald-700 hover:text-emerald-700"
       >
-        GitHub ↗
+        github.com/hiimthien ↗
       </a>
       <a
         href="/CV_Cao_Luong_Thien_PHP_Developer.pdf"
         download="CV_Cao_Luong_Thien_PHP_Developer.pdf"
-        class="underline underline-offset-4 decoration-stone-300 hover:decoration-emerald-700 hover:text-emerald-700"
+        class="underline underline-offset-4 decoration-stone-300 hover:decoration-emerald-700 hover:text-emerald-700 font-medium text-emerald-800"
       >
         {{ isEn ? 'Download CV (PDF)' : 'Tải CV (PDF)' }}
       </a>
@@ -39,6 +39,9 @@
       >
         thiencao.work@gmail.com
       </a>
+      <span class="text-stone-500 font-mono">
+        (+84) 388 145 796
+      </span>
     </div>
   </section>
 </template>
