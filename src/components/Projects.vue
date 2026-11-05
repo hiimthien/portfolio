@@ -110,17 +110,48 @@
         </p>
       </div>
 
-      <!-- Demo Image/GIF (chỉ hiện khi ảnh tồn tại và tải thành công) -->
-      <div
-        v-if="showTechDemo"
-        class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100 shadow-sm"
-      >
-        <img
-          :src="'/images/techshop-demo.png'"
-          alt="TechShop Demo"
-          class="w-full h-full object-cover"
-          @error="showTechDemo = false"
-        />
+      <!-- Multi-Screenshot Showcase with Tabs & Auto-play -->
+      <div class="space-y-2">
+        <!-- Tab selector -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+          <button
+            v-for="(slide, idx) in techScreenshots"
+            :key="slide.src"
+            type="button"
+            @click="selectTechSlide(idx)"
+            :class="[
+              'px-2.5 py-1 rounded-md text-xs font-medium transition-all whitespace-nowrap',
+              currentTechSlide === idx
+                ? 'bg-stone-900 text-white shadow-xs'
+                : 'bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-900'
+            ]"
+          >
+            {{ isEn ? slide.labelEn : slide.labelVi }}
+          </button>
+        </div>
+
+        <!-- Frame -->
+        <div class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100 shadow-sm relative group">
+          <img
+            :src="techScreenshots[currentTechSlide].src"
+            :alt="techScreenshots[currentTechSlide].labelEn"
+            class="w-full h-full object-cover transition-all duration-300"
+          />
+          <!-- Indicators dots -->
+          <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-stone-900/60 backdrop-blur-xs">
+            <button
+              v-for="(_, idx) in techScreenshots"
+              :key="idx"
+              type="button"
+              @click="selectTechSlide(idx)"
+              :class="[
+                'h-1.5 rounded-full transition-all',
+                currentTechSlide === idx ? 'bg-white w-3' : 'bg-white/50 hover:bg-white/80 w-1.5'
+              ]"
+              :aria-label="`Slide ${idx + 1}`"
+            />
+          </div>
+        </div>
       </div>
 
       <!-- Key details -->
@@ -159,12 +190,60 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useLanguage } from '../composables/useLanguage';
 
 const { isEn } = useLanguage();
 
 // Mặc định cho phép thử load, nếu ảnh chưa có thì @error sẽ gán false và ẩn hoàn toàn khung
 const showCineDemo = ref(true);
-const showTechDemo = ref(true);
+
+const currentTechSlide = ref(0);
+const techScreenshots = [
+  {
+    src: '/images/techshop-home.png',
+    labelEn: 'Storefront Catalog',
+    labelVi: 'Trang chủ & Danh mục',
+  },
+  {
+    src: '/images/techshop-detail.png',
+    labelEn: 'Product Details & Variants',
+    labelVi: 'Chi tiết sản phẩm & Biến thể',
+  },
+  {
+    src: '/images/techshop-vnpay.png',
+    labelEn: 'VNPay Payment Success',
+    labelVi: 'Thanh toán VNPay',
+  },
+];
+
+let autoSlideTimer: ReturnType<typeof setInterval> | null = null;
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlideTimer = setInterval(() => {
+    currentTechSlide.value = (currentTechSlide.value + 1) % techScreenshots.length;
+  }, 4000);
+}
+
+function stopAutoSlide() {
+  if (autoSlideTimer) {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = null;
+  }
+}
+
+function selectTechSlide(idx: number) {
+  currentTechSlide.value = idx;
+  // Khởi động lại timer khi user bấm chọn
+  startAutoSlide();
+}
+
+onMounted(() => {
+  startAutoSlide();
+});
+
+onUnmounted(() => {
+  stopAutoSlide();
+});
 </script>
