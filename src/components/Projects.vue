@@ -110,17 +110,17 @@
         </p>
       </div>
 
-      <!-- Multi-Screenshot Showcase with Tabs & Auto-play -->
-      <div class="space-y-2">
+      <!-- Multi-Screenshot Showcase with Tabs & Controls -->
+      <div class="space-y-2.5">
         <!-- Tab selector -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
           <button
             v-for="(slide, idx) in techScreenshots"
             :key="slide.src"
             type="button"
             @click="selectTechSlide(idx)"
             :class="[
-              'px-2.5 py-1 rounded-md text-xs font-medium transition-all whitespace-nowrap',
+              'px-3 py-1.5 rounded-md text-xs font-medium transition-all whitespace-nowrap cursor-pointer',
               currentTechSlide === idx
                 ? 'bg-stone-900 text-white shadow-xs'
                 : 'bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-900'
@@ -131,12 +131,35 @@
         </div>
 
         <!-- Frame -->
-        <div class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100 shadow-sm relative group">
+        <div class="aspect-video w-full rounded-lg border border-stone-200 overflow-hidden bg-stone-100 shadow-sm relative group">
           <img
             :src="techScreenshots[currentTechSlide].src"
             :alt="techScreenshots[currentTechSlide].labelEn"
-            class="w-full h-full object-cover transition-all duration-300"
+            class="w-full h-full object-cover transition-opacity duration-300"
           />
+
+          <!-- Prev/Next Controls -->
+          <button
+            type="button"
+            @click="prevTechSlide"
+            class="absolute left-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-stone-900/60 text-white hover:bg-stone-900 transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
+            aria-label="Previous slide"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            @click="nextTechSlide"
+            class="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-stone-900/60 text-white hover:bg-stone-900 transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
+            aria-label="Next slide"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
           <!-- Indicators dots -->
           <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-stone-900/60 backdrop-blur-xs">
             <button
@@ -145,13 +168,18 @@
               type="button"
               @click="selectTechSlide(idx)"
               :class="[
-                'h-1.5 rounded-full transition-all',
+                'h-1.5 rounded-full transition-all cursor-pointer',
                 currentTechSlide === idx ? 'bg-white w-3' : 'bg-white/50 hover:bg-white/80 w-1.5'
               ]"
               :aria-label="`Slide ${idx + 1}`"
             />
           </div>
         </div>
+
+        <!-- Slide Caption -->
+        <p class="text-xs text-stone-500 italic text-center">
+          {{ isEn ? techScreenshots[currentTechSlide].descEn : techScreenshots[currentTechSlide].descVi }}
+        </p>
       </div>
 
       <!-- Key details -->
@@ -201,19 +229,39 @@ const showCineDemo = ref(true);
 const currentTechSlide = ref(0);
 const techScreenshots = [
   {
-    src: '/images/techshop-home.png',
-    labelEn: 'Storefront Catalog',
-    labelVi: 'Trang chủ & Danh mục',
+    src: '/images/techshop-storefront.png',
+    labelEn: 'Storefront',
+    labelVi: 'Trang chủ bán lẻ',
+    descEn: 'Modern e-commerce storefront with interactive banners, product categories, and real-time flash deals.',
+    descVi: 'Giao diện bán lẻ công nghệ hiện đại với banner động, bộ danh mục sản phẩm và ưu đãi Flash Sale.',
   },
   {
-    src: '/images/techshop-detail.png',
-    labelEn: 'Product Details & Variants',
+    src: '/images/techshop-product-detail.png',
+    labelEn: 'Product Details',
     labelVi: 'Chi tiết sản phẩm & Biến thể',
+    descEn: 'Interactive variant selector (switch types, colors, RGB modes) with live stock counts and technical specs.',
+    descVi: 'Chọn biến thể đa thuộc tính (switch bàn phím, màu nhôm, LED RGB) đồng bộ tồn kho thực và thông số.',
+  },
+  {
+    src: '/images/techshop-admin-dashboard.png',
+    labelEn: 'Admin Dashboard',
+    labelVi: 'Admin Dashboard',
+    descEn: 'Operational business intelligence: revenue analytics, order delivery stages, and customer activity metrics.',
+    descVi: 'Bảng điều khiển quản trị: phân tích doanh thu theo kỳ, thống kê tiến trình vận đơn và chỉ số khách hàng.',
+  },
+  {
+    src: '/images/techshop-admin-orders.png',
+    labelEn: 'Order Lifecycle',
+    labelVi: 'Quản lý 101 đơn hàng',
+    descEn: 'Admin order management hub with live VNPay payment statuses, shipment tracking, and instant action modals.',
+    descVi: 'Hệ thống quản lý 101 đơn hàng, theo dõi trạng thái thanh toán VNPay và phân luồng đóng gói vận chuyển.',
   },
   {
     src: '/images/techshop-vnpay.png',
-    labelEn: 'VNPay Payment Success',
+    labelEn: 'VNPay Checkout',
     labelVi: 'Thanh toán VNPay',
+    descEn: 'Cryptographic SHA-512 payment reconciliation screen with instant callback verification and retry capability.',
+    descVi: 'Màn hình đối soát thanh toán trực tuyến VNPay Sandbox (HMAC-SHA512) và xử lý hoàn tất đơn hàng.',
   },
 ];
 
@@ -222,8 +270,8 @@ let autoSlideTimer: ReturnType<typeof setInterval> | null = null;
 function startAutoSlide() {
   stopAutoSlide();
   autoSlideTimer = setInterval(() => {
-    currentTechSlide.value = (currentTechSlide.value + 1) % techScreenshots.length;
-  }, 4000);
+    nextTechSlide();
+  }, 5000);
 }
 
 function stopAutoSlide() {
@@ -235,8 +283,15 @@ function stopAutoSlide() {
 
 function selectTechSlide(idx: number) {
   currentTechSlide.value = idx;
-  // Khởi động lại timer khi user bấm chọn
   startAutoSlide();
+}
+
+function nextTechSlide() {
+  currentTechSlide.value = (currentTechSlide.value + 1) % techScreenshots.length;
+}
+
+function prevTechSlide() {
+  currentTechSlide.value = (currentTechSlide.value - 1 + techScreenshots.length) % techScreenshots.length;
 }
 
 onMounted(() => {
