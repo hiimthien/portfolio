@@ -113,10 +113,10 @@
       <!-- Demo Image/GIF (chỉ hiện khi ảnh tồn tại và tải thành công) -->
       <div
         v-if="showTechDemo"
-        class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100"
+        class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100 shadow-sm"
       >
         <img
-          :src="'/images/techshop-demo.gif'"
+          :src="'/images/techshop-demo.png'"
           alt="TechShop Demo"
           class="w-full h-full object-cover"
           @error="showTechDemo = false"
@@ -126,23 +126,23 @@
       <!-- Key details -->
       <div class="text-[16px] text-stone-800 space-y-3 leading-relaxed">
         <ul class="list-disc pl-5 space-y-1 text-stone-700 text-[15.5px]">
-          <li v-if="!isEn">Sản phẩm có nhiều biến thể (màu, dung lượng), giỏ hàng, mã giảm giá.</li>
-          <li v-else>Multi-variant products (color, capacity), shopping cart, and coupon discounts.</li>
+          <li v-if="!isEn">Tích hợp cổng thanh toán trực tuyến VNPay Sandbox (HMAC-SHA512) với cơ chế đối soát Idempotent qua Webhook IPN và Return URL, hỗ trợ thanh toán lại trực tiếp.</li>
+          <li v-else>Integrated VNPay Sandbox online gateway (HMAC-SHA512) with idempotent Webhook IPN & Return URL reconciliation and instant retry flow.</li>
 
-          <li v-if="!isEn">Thanh toán VNPay và COD, đăng nhập bằng Google.</li>
-          <li v-else>VNPay and COD checkout, Google OAuth login.</li>
+          <li v-if="!isEn">52 sản phẩm công nghệ (95 biến thể) sử dụng 100% ảnh studio độ phân giải cao lưu trữ local, chuyển đổi bộ lọc danh mục sang URL Slug thân thiện SEO.</li>
+          <li v-else>52 tech products (95 variants) backed by 100% high-res studio photography locally stored, with SEO-friendly category URL slugs.</li>
 
-          <li v-if="!isEn">Tra cứu bảo hành theo mã phiếu hoặc số serial.</li>
-          <li v-else>Warranty lookup by ticket code or device serial number.</li>
+          <li v-if="!isEn">Sản phẩm đa biến thể (màu sắc, cấu hình), giỏ hàng phản ứng nhanh Pinia, áp dụng mã giảm giá và đăng nhập an toàn Google OAuth.</li>
+          <li v-else>Multi-variant catalog, reactive Pinia cart, dynamic coupon validation engine, and Google OAuth login.</li>
 
-          <li v-if="!isEn">Trang admin quản lý sản phẩm, đơn hàng, bảo hành và có thống kê doanh thu.</li>
-          <li v-else>Admin dashboard to manage products, orders, warranties, and review revenue metrics.</li>
+          <li v-if="!isEn">Cơ chế Atomic Lock và Database Transaction khi checkout, triệt tiêu race condition chống bán vượt tồn kho (overselling).</li>
+          <li v-else>Atomic locks and database transactions during checkout to prevent concurrency overselling.</li>
 
-          <li v-if="!isEn">Khi đặt hàng, trừ kho trong transaction để không bán vượt số lượng tồn.</li>
-          <li v-else>Stock deduction executed inside database transactions to prevent overselling.</li>
+          <li v-if="!isEn">Hệ thống quản trị (Admin CMS): Phân tích doanh thu theo kỳ, quản lý vòng đời đơn hàng, tra cứu serial/IMEI và bảo hành điện tử.</li>
+          <li v-else>Admin CMS hub: Date-range revenue analytics, order lifecycle management, and serial/IMEI electronic warranty lookup.</li>
 
-          <li v-if="!isEn">Có 16 test PHPUnit cho backend và 4 test Vitest cho frontend.</li>
-          <li v-else>Covered by 16 backend PHPUnit tests and 4 frontend Vitest tests.</li>
+          <li v-if="!isEn">Kiểm thử toàn diện với 21 test PHPUnit Feature cho Backend và 4 test Vitest cho Frontend (100% Passed).</li>
+          <li v-else>Backed by 21 backend PHPUnit feature tests and 4 frontend Vitest tests (100% Passed).</li>
         </ul>
 
         <p class="text-stone-600 text-[15px] italic">

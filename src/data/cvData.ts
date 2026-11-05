@@ -427,38 +427,39 @@ export const cvData = {
         "TypeScript",
         "Pinia",
         "Tailwind CSS v4",
+        "VNPay Gateway (HMAC-SHA512)",
         "MySQL 8.0",
-        "10 Feature Tests",
+        "21 Feature Tests",
       ],
       highlights: [
         {
           title: {
-            en: "Reactive Cart & Checkout State Flow",
-            vi: "Quản lý giỏ hàng & quy trình checkout phản ứng nhanh",
+            en: "VNPay Sandbox Payment Gateway & Idempotent Audit",
+            vi: "Tích hợp cổng VNPay Sandbox & Đối soát Idempotent",
           },
           detail: {
-            en: "Engineered client-side cart synchronization with Pinia Store, coupon validation engine, and simulated checkout flow with database transaction guarantees.",
-            vi: "Đồng bộ giỏ hàng client-side mượt mà với Pinia Store, áp dụng mã khuyến mãi linh hoạt và luồng đặt hàng mô phỏng bảo toàn tính toàn vẹn dữ liệu.",
+            en: "Engineered end-to-end online payment integration with HMAC-SHA512 checksum validation, automatic timezone handling (GMT+7), idempotent Webhook IPN updates, and in-app instant retry flow.",
+            vi: "Triển khai cổng thanh toán trực tuyến bảo mật với mã hóa HMAC-SHA512, chuẩn hóa múi giờ Việt Nam, xử lý Webhook IPN idempotent và tính năng thử lại thanh toán tức thì.",
           },
         },
         {
           title: {
-            en: "Role-Based Admin Analytics Dashboard",
-            vi: "Bảng điều khiển quản trị phân tích doanh thu",
+            en: "Atomic Inventory Locks & Anti-Overselling Checkout",
+            vi: "Khóa tồn kho nguyên tử & Chống bán vượt số lượng",
           },
           detail: {
-            en: "Built administrative analytics with customizable date-range filtering for revenue, order metrics, and user management.",
-            vi: "Giao diện quản trị phân tích doanh thu và số lượng đơn hàng theo khoảng ngày tùy chọn, đi kèm quản lý phân quyền và người dùng.",
+            en: "Protected stock counts under high concurrency using atomic cache locks and conditional database decrements during checkout, guaranteeing zero overselling.",
+            vi: "Bảo vệ tồn kho đa người dùng bằng atomic cache lock và trừ kho có điều kiện trong database transaction, triệt tiêu rủi ro bán vượt tồn kho.",
           },
         },
         {
           title: {
-            en: "Warranty Claim Workflow & 10 Feature Tests",
-            vi: "Quy trình xử lý bảo hành & Bộ 10 test Feature",
+            en: "100% Studio Photography Catalog & 21 Feature Tests",
+            vi: "Kho 100% ảnh Studio cục bộ & Bộ 21 test Feature",
           },
           detail: {
-            en: "Designed warranty claim ticket processing, prevented IDOR access flaws, and backed the entire platform with 10 comprehensive PHPUnit feature tests.",
-            vi: "Quy trình tiếp nhận và duyệt phiếu bảo hành sản phẩm, ngăn chặn lỗ hổng IDOR và bao phủ toàn bộ luồng bằng 10 bài test Feature.",
+            en: "Organized 52 products (95 variants) with high-res studio photography locally stored, converted dynamic category filters to SEO-friendly slugs, and achieved 100% pass on 21 backend feature tests.",
+            vi: "Chuẩn hóa 52 sản phẩm (95 biến thể) với ảnh studio chất lượng cao lưu trữ local, chuyển đổi bộ lọc sang slug chuẩn SEO và đạt 100% pass trên bộ 21 test Feature.",
           },
         },
       ],
