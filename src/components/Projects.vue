@@ -30,17 +30,76 @@
         </p>
       </div>
 
-      <!-- Demo Image/GIF (chỉ hiện khi ảnh tồn tại và tải thành công) -->
-      <div
-        v-if="showCineDemo"
-        class="aspect-video w-full rounded-md border border-stone-200 overflow-hidden bg-stone-100"
-      >
-        <img
-          :src="'/images/cinereserve-demo.gif'"
-          alt="CineReserve Demo"
-          class="w-full h-full object-cover"
-          @error="showCineDemo = false"
-        />
+      <!-- Multi-Screenshot Showcase for CineReserve -->
+      <div class="space-y-2.5">
+        <!-- Tab selector -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
+          <button
+            v-for="(slide, idx) in cineScreenshots"
+            :key="slide.src"
+            type="button"
+            @click="selectCineSlide(idx)"
+            :class="[
+              'px-3 py-1.5 rounded-md text-xs font-medium transition-all whitespace-nowrap cursor-pointer',
+              currentCineSlide === idx
+                ? 'bg-stone-900 text-white shadow-xs'
+                : 'bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-900'
+            ]"
+          >
+            {{ isEn ? slide.labelEn : slide.labelVi }}
+          </button>
+        </div>
+
+        <!-- Frame -->
+        <div class="aspect-video w-full rounded-lg border border-stone-200 overflow-hidden bg-stone-900 shadow-sm relative group">
+          <img
+            :src="cineScreenshots[currentCineSlide].src"
+            :alt="cineScreenshots[currentCineSlide].labelEn"
+            class="w-full h-full object-cover transition-opacity duration-300"
+          />
+
+          <!-- Prev/Next Controls -->
+          <button
+            type="button"
+            @click="prevCineSlide"
+            class="absolute left-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-stone-900/60 text-white hover:bg-stone-900 transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
+            aria-label="Previous slide"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            @click="nextCineSlide"
+            class="absolute right-2.5 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-stone-900/60 text-white hover:bg-stone-900 transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
+            aria-label="Next slide"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Indicators dots -->
+          <div class="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-stone-900/60 backdrop-blur-xs">
+            <button
+              v-for="(_, idx) in cineScreenshots"
+              :key="idx"
+              type="button"
+              @click="selectCineSlide(idx)"
+              :class="[
+                'h-1.5 rounded-full transition-all cursor-pointer',
+                currentCineSlide === idx ? 'bg-white w-3' : 'bg-white/50 hover:bg-white/80 w-1.5'
+              ]"
+              :aria-label="`Slide ${idx + 1}`"
+            />
+          </div>
+        </div>
+
+        <!-- Slide Caption -->
+        <p class="text-xs text-stone-500 italic text-center">
+          {{ isEn ? cineScreenshots[currentCineSlide].descEn : cineScreenshots[currentCineSlide].descVi }}
+        </p>
       </div>
 
       <!-- Problem & Solution -->
@@ -223,9 +282,69 @@ import { useLanguage } from '../composables/useLanguage';
 
 const { isEn } = useLanguage();
 
-// Mặc định cho phép thử load, nếu ảnh chưa có thì @error sẽ gán false và ẩn hoàn toàn khung
-const showCineDemo = ref(true);
+// CineReserve Screenshots & Slider
+const currentCineSlide = ref(0);
+const cineScreenshots = [
+  {
+    src: '/images/cinereserve-seats.png',
+    labelEn: 'Seat Matrix & Locks',
+    labelVi: 'Sơ đồ ghế & Khóa Redis',
+    descEn: 'Real-time interactive seat matrix solving double-booking race conditions with 10-minute Redis locks (SET NX) and WebSocket broadcasting.',
+    descVi: 'Sơ đồ chọn ghế thời gian thực giải quyết Race Condition bằng Redis Lock (SET NX 10 phút), chống chọn trùng ghế và phát sóng WebSocket qua Laravel Reverb.',
+  },
+  {
+    src: '/images/cinereserve-home.png',
+    labelEn: 'Cinema Storefront',
+    labelVi: 'Trang chủ điện ảnh',
+    descEn: 'Cinematic dark-mode storefront automatically synchronizing now-playing blockbusters from TMDb API.',
+    descVi: 'Giao diện rạp phim Dark mode điện ảnh, đồng bộ tự động danh mục phim bom tấn chiếu rạp qua TMDb API.',
+  },
+  {
+    src: '/images/cinereserve-detail.png',
+    labelEn: 'Movie & Showtimes',
+    labelVi: 'Chi tiết phim & Lịch chiếu',
+    descEn: 'Comprehensive movie details, age ratings, direct trailer playback, and national theater chain showtime filters.',
+    descVi: 'Thông tin phim, phân loại độ tuổi, xem trailer trực tiếp và bộ lọc lịch chiếu 7 ngày theo cụm rạp toàn quốc.',
+  },
+  {
+    src: '/images/cinereserve-now-showing.png',
+    labelEn: 'Now Showing Catalog',
+    labelVi: 'Phim đang chiếu',
+    descEn: 'Dynamic movie catalog with genre filtering, audience ratings, runtimes, and fast booking shortcuts.',
+    descVi: 'Bộ lọc thể loại phim (Hành động, Hoạt hình, Kinh dị), điểm đánh giá TMDb và nút đặt vé nhanh.',
+  },
+];
 
+let cineAutoSlideTimer: ReturnType<typeof setInterval> | null = null;
+
+function startCineAutoSlide() {
+  stopCineAutoSlide();
+  cineAutoSlideTimer = setInterval(() => {
+    nextCineSlide();
+  }, 6000);
+}
+
+function stopCineAutoSlide() {
+  if (cineAutoSlideTimer) {
+    clearInterval(cineAutoSlideTimer);
+    cineAutoSlideTimer = null;
+  }
+}
+
+function selectCineSlide(idx: number) {
+  currentCineSlide.value = idx;
+  startCineAutoSlide();
+}
+
+function nextCineSlide() {
+  currentCineSlide.value = (currentCineSlide.value + 1) % cineScreenshots.length;
+}
+
+function prevCineSlide() {
+  currentCineSlide.value = (currentCineSlide.value - 1 + cineScreenshots.length) % cineScreenshots.length;
+}
+
+// TechShop Screenshots & Slider
 const currentTechSlide = ref(0);
 const techScreenshots = [
   {
@@ -295,10 +414,12 @@ function prevTechSlide() {
 }
 
 onMounted(() => {
+  startCineAutoSlide();
   startAutoSlide();
 });
 
 onUnmounted(() => {
+  stopCineAutoSlide();
   stopAutoSlide();
 });
 </script>
