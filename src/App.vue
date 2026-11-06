@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen bg-[#fafaf9] text-stone-900 antialiased">
-    <div class="max-w-[720px] mx-auto px-5 sm:px-6 py-12 sm:py-16">
+    <div class="max-w-[720px] mx-auto px-5 sm:px-6 py-8 sm:py-12">
       <Navbar />
-      <main class="space-y-16 sm:space-y-20">
+      <main class="space-y-10 sm:space-y-12">
         <Hero />
-        <Projects />
         <Experience />
+        <Projects />
         <Skills />
         <Education />
         <Contact />

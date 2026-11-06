@@ -1,7 +1,7 @@
 <template>
-  <header class="flex items-center justify-between pb-8 sm:pb-12 text-sm text-stone-500">
+  <header class="flex items-center justify-between pb-6 sm:pb-8 text-sm text-stone-500">
     <a href="#about" class="text-stone-900 font-medium hover:text-emerald-700">
-      Cao Lương Thiện
+      {{ t('nav.name') }}
     </a>
 
     <!-- Minimal Language Switcher -->
@@ -28,5 +28,5 @@
 <script setup lang="ts">
 import { useLanguage } from '../composables/useLanguage';
 
-const { isEn, setLanguage } = useLanguage();
+const { isEn, setLanguage, t } = useLanguage();
 </script>

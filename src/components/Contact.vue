@@ -2,16 +2,12 @@
   <section id="contact" class="text-left space-y-4">
     <div>
       <h2 class="text-xl font-bold tracking-tight text-stone-900 border-b border-stone-200 pb-2">
-        {{ isEn ? 'Contact' : 'Liên hệ' }}
+        {{ t('contact.title') }}
       </h2>
     </div>
 
-    <!-- Một câu ngắn, không slogan -->
     <p class="text-[16px] text-stone-800 leading-relaxed">
-      {{ isEn
-        ? 'You can reach me via email or GitHub.'
-        : 'Bạn có thể liên hệ mình qua email hoặc GitHub.'
-      }}
+      {{ t('contact.desc') }}
     </p>
 
     <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-[15.5px]">
@@ -36,5 +32,5 @@
 <script setup lang="ts">
 import { useLanguage } from '../composables/useLanguage';
 
-const { isEn } = useLanguage();
+const { t } = useLanguage();
 </script>

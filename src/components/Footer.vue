@@ -1,11 +1,11 @@
 <template>
-  <footer class="pt-12 mt-16 border-t border-stone-200 text-xs text-stone-500 flex flex-col sm:flex-row items-baseline justify-between gap-3">
+  <footer class="pt-8 mt-10 border-t border-stone-200 text-xs text-stone-500 flex flex-col sm:flex-row items-baseline justify-between gap-3">
     <div>
-      &copy; {{ new Date().getFullYear() }} Cao Lương Thiện
+      &copy; {{ new Date().getFullYear() }} {{ t('footer.copyright') }}
     </div>
     <div class="flex items-center space-x-3 text-stone-600">
       <a
-        :href="cvData.personal.githubUrl"
+        href="https://github.com/hiimthien"
         target="_blank"
         rel="noopener noreferrer"
         class="hover:text-stone-900"
@@ -14,7 +14,7 @@
       </a>
       <span>&middot;</span>
       <a
-        :href="'mailto:' + cvData.personal.email"
+        href="mailto:thiencao.work@gmail.com"
         class="hover:text-stone-900"
       >
         Email
@@ -24,7 +24,7 @@
         @click="scrollToTop"
         class="hover:text-stone-900 cursor-pointer"
       >
-        {{ isEn ? 'Back to top ↑' : 'Về đầu trang ↑' }}
+        {{ t('footer.backToTop') }}
       </button>
     </div>
   </footer>
@@ -32,9 +32,8 @@
 
 <script setup lang="ts">
 import { useLanguage } from '../composables/useLanguage';
-import { cvData } from '../data/cvData';
 
-const { isEn } = useLanguage();
+const { t } = useLanguage();
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
